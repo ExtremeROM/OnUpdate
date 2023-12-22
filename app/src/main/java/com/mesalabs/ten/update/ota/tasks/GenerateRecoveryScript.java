@@ -41,7 +41,7 @@ public class GenerateRecoveryScript extends AsyncTask<Void, String, Boolean> {
 
     protected void onPreExecute() {
         // Show dialog
-        mProgressCircle = new Dialog(mContext, Utils.isNightMode(mContext) ? R.style.mesa_ProgressCircleDialogStyle : R.style.mesa_ProgressCircleDialogStyle);
+        mProgressCircle = new Dialog(mContext, Utils.isNightMode(mContext) ? R.style.mesa_ProgressCircleDialogStyle : R.style.mesa_ProgressCircleDialogStyle_Light);
         mProgressCircle.requestWindowFeature(Window.FEATURE_NO_TITLE);
         mProgressCircle.getWindow().setGravity(Gravity.CENTER);
         mProgressCircle.setCancelable(false);
