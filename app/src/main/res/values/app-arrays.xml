@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string-array name="extreme_channel_pref_entries">
+        <item>@string/extreme_channel_pref_release</item>
+        <item>@string/extreme_channel_pref_test</item>
+    </string-array>
+    <string-array name="extreme_channel_pref_values">
+        <item>release</item>
+        <item>test</item>
+    </string-array>
     <string-array name="mesa_bgservice_freq_entries">
         <item>@string/mesa_bgservice_freq_60min_pref_sum</item>
         <item>@string/mesa_bgservice_freq_3h_pref_sum</item>

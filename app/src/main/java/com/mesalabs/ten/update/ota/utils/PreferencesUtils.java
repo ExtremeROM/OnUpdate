@@ -29,6 +29,7 @@ public class PreferencesUtils {
     public static String KEY_MAIN_NOTI_CHANNEL_NAME = "mesa_main_noti_channel_name";
     public static String KEY_NETWORK_TYPE = "mesa_networktype_pref";
     public static String KEY_REBOOT_FOR_INSTALL = "mesa_reboot_for_install";
+    public static String KEY_EXTREME_CHANNEL = "extreme_channel_pref";
 
     private static SharedPreferencesUtils sp = SharedPreferencesUtils.getInstance();
 
@@ -83,6 +84,14 @@ public class PreferencesUtils {
 
     public static void setBgServiceCheckFrequency(String value) {
         sp.put(KEY_BGSERVICE_CHECK_FREQ, value);
+    }
+
+    public static void setExtremeChannel(String value) {
+        sp.put(KEY_EXTREME_CHANNEL, value);
+    }
+
+    public static String getExtremeChannel() {
+        return sp.getString(KEY_EXTREME_CHANNEL, "release");
     }
 
     public static String getBgServiceNotificationSound() {

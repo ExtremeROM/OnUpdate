@@ -1,5 +1,7 @@
 package com.mesalabs.ten.update.ota;
 
+import static com.mesalabs.ten.update.ota.utils.PreferencesUtils.getExtremeChannel;
+
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -19,6 +21,7 @@ import java.net.URLConnection;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 import com.mesalabs.cerberus.utils.CerberusException;
@@ -138,8 +141,19 @@ public class ROMUpdate {
         protected Void doInBackground(Void... v) {
             try {
                 InputStream input = null;
+                URL url;
 
-                URL url = new URL(Constants.OTA_MANIFEST_URL);
+                if(Objects.equals(getExtremeChannel(), "test"))
+                {
+                    url = new URL(Constants.OTA_MANIFEST_URL_TEST);
+                }
+                else
+                {
+                    url = new URL(Constants.OTA_MANIFEST_URL_REL);
+                }
+
+
+
                 URLConnection connection = url.openConnection();
                 connection.connect();
 

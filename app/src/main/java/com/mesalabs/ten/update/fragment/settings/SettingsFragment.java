@@ -58,6 +58,11 @@ public class SettingsFragment extends SeslPreferenceFragmentCompat implements
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
 
+        PreferenceCategory extremeChannelPrefParent = (PreferenceCategory) findPreference("extreme_channel");
+        SeslListPreference extremeChannelPref = (SeslListPreference) findPreference("extreme_channel_pref");
+        extremeChannelPref.seslSetSummaryColor(getColoredSummaryColor());
+        extremeChannelPref.setOnPreferenceClickListener(this);
+
         PreferenceCategory bgServicePrefParent = (PreferenceCategory) findPreference("mesa_bgservice");
 
         SeslSwitchPreferenceCompat bgServicePref = (SeslSwitchPreferenceCompat) findPreference("mesa_bgservice_pref");
@@ -130,6 +135,9 @@ public class SettingsFragment extends SeslPreferenceFragmentCompat implements
                 return true;
             case "mesa_bgservice_noti_vibrate_pref":
                 PreferencesUtils.setBgServiceNotificationVibrate((boolean) newValue);
+                return true;
+            case "extreme_channel_pref":
+                PreferencesUtils.setExtremeChannel((String) newValue);
                 return true;
         }
 

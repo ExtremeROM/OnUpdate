@@ -3,6 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <com.samsung.android.ui.preference.PreferenceCategory
+        android:title="@string/extreme_updates_prefcateg_title"
+        android:key="extreme_channel">
+
+        <com.samsung.android.ui.preference.SeslListPreference
+            android:key="extreme_channel_pref"
+            android:title="@string/extreme_channel_pref_title"
+            android:summary="@string/mesa_list_summary"
+            android:defaultValue="release"
+            android:entries="@array/extreme_channel_pref_entries"
+            android:entryValues="@array/extreme_channel_pref_values"
+            />
+
+    </com.samsung.android.ui.preference.PreferenceCategory>
+
+    <com.samsung.android.ui.preference.PreferenceCategory
         android:title="@string/mesa_notifs_prefcateg_title"
         android:key="mesa_bgservice">
 
