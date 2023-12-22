@@ -179,7 +179,7 @@ public class MainActivity extends BaseAppBarActivity {
     private void initUX() {
         initAnimationFields();
 
-        mProgressCircle = new Dialog(mContext, Utils.isNightMode(mContext) ? R.style.mesa_ProgressCircleDialogStyle : R.style.mesa_ProgressCircleDialogStyle_Light);
+        mProgressCircle = new Dialog(mContext, Utils.isNightMode(mContext) ? R.style.mesa_ProgressCircleDialogStyle : R.style.mesa_ProgressCircleDialogStyle);
         mProgressCircle.requestWindowFeature(Window.FEATURE_NO_TITLE);
         mProgressCircle.getWindow().setGravity(Gravity.CENTER);
         mProgressCircle.setCancelable(false);
