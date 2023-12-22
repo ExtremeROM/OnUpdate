@@ -275,10 +275,7 @@ public class Utils {
     }
 
     public static boolean isNightMode(Context context) {
-        TypedValue outValue = new TypedValue();
-        context.getTheme().resolveAttribute(R.attr.isLightTheme, outValue, true);
-
-        return outValue.data == 0;
+        return true;
     }
 
     public static boolean isTabletDevice(Context context) {
